@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
     cors({
-        origin: '*', // Open for all origins
+        origin: '*', 
     })
 );
 
@@ -28,9 +28,9 @@ app.get("/", (req, res)=>{
 })
 
 
-app.use('/auth', userRouter)
-app.use('/menu', menuRouter)
-app.use('/food', orderRouter)
+app.use('/api/auth', userRouter)
+app.use('/api/menu', menuRouter)
+app.use('/api/food', orderRouter)
 
 app.listen(process.env.PORT || PORT,()=>{
     connectDB()
