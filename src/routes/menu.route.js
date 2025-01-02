@@ -5,7 +5,7 @@ import {
     createMenuItem,
     updateMenuItem,
     deleteMenuItem,
-    seedMenu
+    // seedMenu
 } from '../controllers/menu.controller.js';
 import { auth } from '../middlewares/auth.middleware.js';
 

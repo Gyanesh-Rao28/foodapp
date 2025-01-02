@@ -1,27 +1,27 @@
 import Menu from '../models/menu.model.js';
-import menuData from '../utils/menu.js';
+// import menuData from '../utils/menu.js';
 
-const seedMenu = async (req, res) => {
-    try {
-        // Clear existing menu items
-        // await Menu.deleteMany({});
+// const seedMenu = async (req, res) => {
+//     try {
+//         // Clear existing menu items
+//         // await Menu.deleteMany({});
 
-        // Insert new menu items
-        const items = await Menu.insertMany(menuData);
+//         // Insert new menu items
+//         const items = await Menu.insertMany(menuData);
 
-        res.status(200).json({
-            success: false,
-            message: 'Error fetching menu items',
-            error: items
-        });
-    } catch (error) {
-        res.status(500).json({
-            success: false,
-            message: 'Error fetching menu items',
-            error: error.message
-        });
-    }
-};
+//         res.status(200).json({
+//             success: false,
+//             message: 'Error fetching menu items',
+//             error: items
+//         });
+//     } catch (error) {
+//         res.status(500).json({
+//             success: false,
+//             message: 'Error fetching menu items',
+//             error: error.message
+//         });
+//     }
+// };
 
 // Fetch all menu items
 const getAllMenuItems = async (req, res) => {
@@ -143,5 +143,5 @@ export {
     createMenuItem,
     updateMenuItem,
     deleteMenuItem,
-    seedMenu
+    // seedMenu
 };
