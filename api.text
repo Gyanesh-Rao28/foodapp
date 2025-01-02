@@ -1,0 +1,18 @@
+User:
+
+/auth/getUser
+/auth/register - POST [User registaration]
+/auth/login - POST [User login]
+
+
+Menu:
+
+/menu - GET [fetch all menu items]
+/menu - POST [add a new menu item]
+/menu/:id - PUT [Update a menu item]
+/menu/:id - DELETE [Delete a menu item]
+
+
+Order:
+food/order - POST [Place an order]
+food/orders - GET [fetch all user order]
