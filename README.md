@@ -6,35 +6,19 @@ A backend API for a food delivery application built with Node.js, Express, and M
 ## Folder Structure
 ```
 src/
-├── controllers/              # Route handlers/business logic
-│   ├── auth.controller.js    # Authentication handlers
-│   ├── menu.controller.js    # Menu CRUD operations
-│   └── order.controller.js   # Order operations
-│
-├── middlewares/             # Custom middleware functions
-│   ├── auth.middleware.js    # JWT authentication middleware
-│   ├── error.middleware.js   # Error handling middleware
-│   └── validate.middleware.js # Request validation
-│
-├── models/                  # Database schemas/models
-│   ├── menu.model.js        # Menu item schema
-│   ├── order.model.js       # Order schema
-│   └── user.model.js        # User schema
-│
-├── routes/                  # API route definitions
-│   ├── menu.route.js        # Menu routes
-│   ├── order.route.js       # Order routes
-│   └── user.route.js        # Auth routes
-│
-├── utils/                   # Helper functions & configurations
-│   ├── db.js               # Database connection
-│   └── config.js           # App configuration
-│
-├── .env                    # Environment variables
-├── .gitignore             # Git ignore file
-├── index.js               # Application entry point
-├── package.json           # Project dependencies & scripts
-└── README.md             # Project documentation
+├── controllers/        # Route handlers for different entities
+├── middlewares/       # Custom middleware functions
+├── models/           # Database models/schemas
+│   ├── menu.model.js
+│   ├── order.model.js
+│   └── user.model.js
+├── routes/           # API route definitions
+│   ├── menu.route.js
+│   ├── order.route.js
+│   └── user.route.js
+├── utils/            # Utility functions
+│   └── db.js        # Database connection
+└── index.js         # Application entry point
 ```
 
 ## Environment Variables
