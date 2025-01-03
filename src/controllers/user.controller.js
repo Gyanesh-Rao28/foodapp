@@ -4,6 +4,7 @@ import jwt from 'jsonwebtoken';
 
 const getUser = async (req, res)=>{
     try {
+        await connectDB();
         const user = await User.find({}).select('-password');
 
         return res.status(200).json({
@@ -22,6 +23,7 @@ const getUser = async (req, res)=>{
 
 const createUser = async (req, res) => {
     try {
+        await connectDB();
         const { username, password } = req.body;
 
         // Check if user already exists
@@ -69,6 +71,7 @@ const createUser = async (req, res) => {
 
 const login = async (req, res) => {
     try {
+        await connectDB();
         const { username, password } = req.body;
 
         // Find user

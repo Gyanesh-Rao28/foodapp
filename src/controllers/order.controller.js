@@ -1,9 +1,12 @@
 import Order from '../models/order.model.js';
 import Menu from '../models/menu.model.js';
+import connectDB from '../db.js';
+
 
 // Place a new order
 const createOrder = async (req, res) => {
     try {
+        await connectDB();
         const { items } = req.body; // Array of { menuItemId, quantity }
 
         if (!items || !items.length) {
@@ -73,6 +76,7 @@ const createOrder = async (req, res) => {
 // Get all orders for logged in user
 const getUserOrders = async (req, res) => {
     try {
+        await connectDB();
         const orders = await Order.find({ userId: req.user._id })
             .populate({
                 path: 'items.menuItem',

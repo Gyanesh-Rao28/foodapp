@@ -1,4 +1,6 @@
+import connectDB from '../db.js';
 import Menu from '../models/menu.model.js';
+
 // import menuData from '../utils/menu.js';
 
 // const seedMenu = async (req, res) => {
@@ -26,6 +28,7 @@ import Menu from '../models/menu.model.js';
 // Fetch all menu items
 const getAllMenuItems = async (req, res) => {
     try {
+        await connectDB();
         const menuItems = await Menu.find({});
 
         res.status(200).json({
@@ -45,6 +48,8 @@ const getAllMenuItems = async (req, res) => {
 // Add new menu item
 const createMenuItem = async (req, res) => {
     try {
+        await connectDB();
+
         const { name, category, price, availability } = req.body;
 
         const menuItem = new Menu({
@@ -73,6 +78,8 @@ const createMenuItem = async (req, res) => {
 // Update menu item
 const updateMenuItem = async (req, res) => {
     try {
+        await connectDB();
+
         const { id } = req.params;
         const updates = req.body;
 
@@ -111,6 +118,7 @@ const updateMenuItem = async (req, res) => {
 // Delete menu item
 const deleteMenuItem = async (req, res) => {
     try {
+        await connectDB();
         const { id } = req.params;
 
         const menuItem = await Menu.findByIdAndDelete(id);
