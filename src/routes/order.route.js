@@ -4,7 +4,6 @@ import { auth } from '../middlewares/auth.middleware.js';
 
 const router = express.Router();
 
-// All routes require authentication
 router.use(auth);
 
 router.post('/order', createOrder);
