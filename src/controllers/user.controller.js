@@ -1,6 +1,6 @@
 import User from '../models/user.model.js';
 import jwt from 'jsonwebtoken';
-
+import connectDB from "../db.js";
 
 const getUser = async (req, res)=>{
     try {
